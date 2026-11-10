@@ -1,0 +1,688 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Jamil Faraj · 贾米尔·法拉杰</title>
+<meta name="description" content="Jamil Faraj, Baku. Application portfolio for a B.Sc. in Computer Science and Technology in China.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=IBM+Plex+Mono:wght@400;500&family=Noto+Serif+SC:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#f3eee3;
+  --paper-2:#ebe4d5;
+  --ink:#1c1a16;
+  --soft:#5e574b;
+  --rule:#cfc6b3;
+  --red:#ad3324;
+  --serif:"EB Garamond","Noto Serif SC",Georgia,"Times New Roman",serif;
+  --han:"Noto Serif SC","Songti SC","SimSun",serif;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
+  --ease:cubic-bezier(.23,1,.32,1);
+}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{
+  margin:0;background:var(--paper);color:var(--ink);
+  font-family:var(--serif);font-size:20px;line-height:1.55;
+  -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;
+}
+html[lang="zh"] body{font-size:17.5px;line-height:1.85}
+html[lang="ru"] body,html[lang="az"] body{font-size:19px}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration-color:var(--red);text-decoration-thickness:1px;text-underline-offset:.2em}
+button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:pointer}
+:focus-visible{outline:2px solid var(--red);outline-offset:3px}
+::selection{background:var(--red);color:var(--paper)}
+.han{font-family:var(--han)}
+
+.wrap{max-width:1120px;margin:0 auto;padding:0 32px}
+.label{
+  font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--soft);
+}
+html[lang="zh"] .label{font-family:var(--han);font-size:13px;letter-spacing:.12em}
+
+/* ── top bar ─────────────────────────────── */
+.top{display:flex;align-items:baseline;justify-content:space-between;gap:24px;padding:26px 0 22px;border-bottom:1px solid var(--ink)}
+.top .name{font-size:21px;font-weight:500;text-decoration:none;white-space:nowrap}
+.top nav{display:flex;gap:26px}
+.top nav a{text-decoration:none;font-size:17px;color:var(--soft);transition:color .15s ease}
+.langs{display:flex;gap:14px;font-family:var(--mono);font-size:13px}
+.langs button{color:var(--soft);padding:4px 0;border-bottom:1px solid transparent;transition:color .15s ease}
+.langs button[aria-pressed="true"]{color:var(--ink);border-bottom-color:var(--red)}
+.langs button:active{transform:scale(.96)}
+@media (hover:hover){
+  .top nav a:hover,.langs button:hover{color:var(--ink)}
+}
+
+/* ── hero ─────────────────────────────── */
+.hero{display:grid;grid-template-columns:minmax(0,1fr) 380px;gap:72px;padding:76px 0 84px;align-items:start}
+.hero h1{
+  font-size:clamp(64px,10.5vw,136px);line-height:.92;font-weight:400;letter-spacing:-.025em;margin:18px 0 0;
+}
+.hero h1 em{font-style:italic;font-weight:400}
+.lead{font-size:clamp(23px,2.5vw,29px);line-height:1.38;max-width:23em;margin:36px 0 0}
+html[lang="zh"] .lead{font-size:clamp(20px,2.1vw,24px);line-height:1.7}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:36px}
+.btn{
+  display:inline-flex;align-items:center;gap:10px;height:48px;padding:0 22px;
+  border:1px solid var(--ink);text-decoration:none;font-size:18px;
+  transition:transform .16s var(--ease),background-color .16s ease,color .16s ease;
+}
+.btn.solid{background:var(--ink);color:var(--paper)}
+.btn:active{transform:scale(.97)}
+@media (hover:hover){
+  .btn:hover{background:var(--red);border-color:var(--red);color:var(--paper)}
+}
+
+.portrait{position:relative;margin:0}
+.portrait img{width:100%;aspect-ratio:496/512;object-fit:cover;filter:saturate(.85) contrast(1.02)}
+.portrait::after{content:"";position:absolute;inset:10px -10px -10px 10px;border:1px solid var(--ink);z-index:-1}
+.vname{
+  position:absolute;top:0;right:calc(100% + 18px);
+  writing-mode:vertical-rl;font-family:var(--han);font-size:25px;letter-spacing:.32em;color:var(--red);white-space:nowrap;
+}
+.seal{
+  position:absolute;right:-14px;bottom:-22px;width:58px;height:58px;background:var(--red);color:var(--paper);
+  display:grid;place-items:center;font-family:var(--han);font-weight:600;font-size:30px;line-height:1;
+  transform:rotate(-4deg);border-radius:3px;box-shadow:inset 0 0 0 3px var(--red),inset 0 0 0 4px rgba(243,238,227,.7);
+}
+.facts{margin:44px 0 0;border-top:1px solid var(--ink)}
+.facts div{display:flex;justify-content:space-between;gap:16px;padding:9px 0;border-bottom:1px solid var(--rule);align-items:baseline}
+.facts dt{flex:none}
+.facts dd{margin:0;text-align:right;font-variant-numeric:tabular-nums lining-nums}
+
+/* ── sections ─────────────────────────────── */
+.sec{display:grid;grid-template-columns:220px minmax(0,1fr);gap:56px;padding:68px 0;border-top:1px solid var(--ink)}
+.sec > header{position:sticky;top:28px;align-self:start}
+.sec h2{font-size:34px;line-height:1.08;font-weight:400;margin:10px 0 0;letter-spacing:-.01em}
+html[lang="zh"] .sec h2{font-size:28px;line-height:1.3}
+.sec h3{font-size:25px;font-weight:500;margin:0;line-height:1.2}
+p{margin:0 0 1.05em}
+.measure{max-width:34em}
+html[lang="zh"] .measure{max-width:31em}
+
+/* letter */
+.letter p:first-of-type{font-style:italic;color:var(--soft)}
+.letter p:nth-of-type(2)::first-letter{
+  float:left;font-size:4.1em;line-height:.8;padding:.08em .1em 0 0;color:var(--red);
+}
+html[lang="zh"] .letter p:nth-of-type(2)::first-letter{float:none;font-size:inherit;padding:0;color:inherit}
+html[lang="zh"] .letter p:not(:first-of-type){text-indent:2em}
+.sign{margin-top:38px;display:flex;align-items:center;gap:18px}
+.sign .sig{font-style:italic;font-size:34px;line-height:1}
+html[lang="zh"] .sign .sig{font-style:normal;font-size:26px}
+
+.lines{list-style:none;margin:64px 0 0;padding:0;border-top:1px solid var(--rule)}
+.lines-title{margin:64px 0 -50px}
+.lines li{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:36px;padding:26px 0;border-bottom:1px solid var(--rule);align-items:start}
+.lines .zh{font-family:var(--han);font-size:27px;line-height:1.45;margin:0}
+.lines .py{font-style:italic;color:var(--soft);font-size:17px;margin:6px 0 0}
+.lines .tr{margin:0}
+.lines .note{color:var(--soft);font-size:.9em;margin:6px 0 0}
+
+/* record */
+.record{width:100%;border-collapse:collapse}
+.record th,.record td{text-align:left;vertical-align:baseline;padding:16px 0;border-bottom:1px solid var(--rule)}
+.record tr:first-child th,.record tr:first-child td{padding-top:0}
+.record th{width:190px;font-weight:400;padding-right:24px}
+.record .val{font-size:27px;line-height:1.2;font-variant-numeric:lining-nums}
+html[lang="zh"] .record .val{font-size:23px}
+.record .note{color:var(--soft);font-size:.9em;margin-top:3px}
+
+/* piano */
+.papers{display:grid;grid-template-columns:1fr 1fr;gap:44px;margin-top:22px}
+.paper{margin:0}
+.paper button{
+  display:block;width:100%;background:#fff;padding:10px;cursor:zoom-in;
+  box-shadow:0 1px 1px rgba(28,26,22,.12),0 10px 26px -12px rgba(28,26,22,.45);
+  transition:transform .28s var(--ease);
+}
+.paper:nth-child(1) button{transform:rotate(-1.6deg)}
+.paper:nth-child(2) button{transform:rotate(1.2deg)}
+.paper button:active{transform:rotate(0) scale(.985)}
+@media (hover:hover){.paper button:hover{transform:rotate(0) translateY(-4px)}}
+.paper img{width:100%;height:330px;object-fit:cover;object-position:top}
+.paper figcaption{margin-top:24px}
+.paper .result{color:var(--red)}
+.paper .meta{color:var(--soft);font-size:.86em;line-height:1.5;margin-top:8px}
+
+.kb{margin-top:68px;padding-top:28px;border-top:1px solid var(--rule)}
+.pieces{display:flex;flex-wrap:wrap;gap:10px;margin:18px 0 26px}
+.chip{
+  height:40px;padding:0 16px;border:1px solid var(--ink);font-size:17px;
+  transition:transform .16s var(--ease),background-color .16s ease,color .16s ease;
+}
+.chip:active{transform:scale(.97)}
+.chip[aria-pressed="true"]{background:var(--ink);color:var(--paper)}
+.chip.stop{border-color:var(--rule);color:var(--soft)}
+@media (hover:hover){.chip:hover{background:var(--ink);color:var(--paper)}}
+.keys{position:relative;display:flex;height:210px;border:1px solid var(--ink);border-top:7px solid var(--ink);background:var(--ink);gap:1px;user-select:none;-webkit-user-select:none;touch-action:manipulation}
+.key{flex:1;background:#fbf8f1;display:flex;align-items:flex-end;justify-content:center;padding-bottom:10px;
+  font-family:var(--mono);font-size:11px;color:#a59c8a;transform-origin:top;transition:transform .09s ease-out,background-color .09s ease-out}
+.key.down{background:#eadfca;transform:scaleY(.985)}
+.key.black{
+  position:absolute;top:0;width:5.4%;height:60%;margin-left:-2.7%;background:var(--ink);color:#8d8676;padding-bottom:8px;z-index:2;
+  flex:none;border-radius:0 0 3px 3px;
+}
+.key.black.down{background:var(--red);color:var(--paper);transform:scaleY(.97)}
+.now{min-height:1.6em;margin-top:14px;color:var(--soft);font-style:italic;font-size:.9em}
+
+/* sport */
+.sports{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:40px}
+.sports article{border-top:1px solid var(--ink);padding-top:16px}
+.sports .tag{margin:6px 0 14px;min-height:1.5em}
+.sports p{font-size:.94em;margin:0}
+.pitch{width:100%;max-width:210px;height:auto;margin:22px 0 0;display:block}
+
+/* contact */
+.mail{font-size:clamp(26px,4.4vw,52px);line-height:1.1;letter-spacing:-.01em;text-decoration-thickness:2px;word-break:break-word}
+.contact-rows{margin:36px 0 0;border-top:1px solid var(--rule);max-width:34em}
+.contact-rows div{display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding:13px 0;border-bottom:1px solid var(--rule)}
+.contact-rows dd{margin:0;display:flex;gap:18px;align-items:baseline;flex-wrap:wrap;justify-content:flex-end}
+.copy{font-family:var(--mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--red);padding:4px 0}
+.copy:active{transform:scale(.96)}
+
+footer{border-top:1px solid var(--ink);padding:24px 0 48px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+
+/* viewer */
+dialog{border:0;padding:0;background:transparent;max-width:min(92vw,820px);max-height:94vh;overflow:visible}
+dialog img{max-height:90vh;width:auto;margin:0 auto;background:#fff;box-shadow:0 30px 80px -20px rgba(0,0,0,.6)}
+dialog::backdrop{background:rgba(28,26,22,.78)}
+dialog[open]{animation:pop .24s var(--ease)}
+dialog[open]::backdrop{animation:fade .2s ease-out}
+.close{position:absolute;top:-14px;right:-14px;width:40px;height:40px;border-radius:50%;background:var(--paper);color:var(--ink);font-size:22px;line-height:1;display:grid;place-items:center;box-shadow:0 2px 10px rgba(0,0,0,.3)}
+.close:active{transform:scale(.94)}
+@keyframes pop{from{opacity:0;transform:scale(.96)}to{opacity:1;transform:none}}
+@keyframes fade{from{opacity:0}to{opacity:1}}
+
+/* entrance + scroll reveal */
+.js .rise{opacity:0;transform:translateY(10px);animation:rise .6s var(--ease) forwards;animation-delay:calc(var(--i,0) * 70ms + 60ms)}
+@keyframes rise{to{opacity:1;transform:none}}
+.js .rv{opacity:0;transform:translateY(12px);transition:opacity .6s var(--ease),transform .6s var(--ease)}
+.js .rv.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .js .rise,.js .rv{opacity:1;transform:none;animation:none;transition:none}
+  dialog[open],dialog[open]::backdrop{animation:none}
+  .paper button,.btn,.chip,.key{transition:none}
+}
+
+/* ── small screens ─────────────────────────────── */
+@media (max-width:980px){
+  .hero{grid-template-columns:1fr;gap:56px;padding:52px 0 64px}
+  .hero aside{max-width:400px;margin-left:44px}
+  .sec{grid-template-columns:1fr;gap:26px;padding:52px 0}
+  .sec > header{position:static}
+  .top nav{display:none}
+}
+@media (max-width:640px){
+  body{font-size:18.5px}
+  html[lang="zh"] body{font-size:16.5px}
+  .wrap{padding:0 20px}
+  .hero aside{margin-left:40px;margin-right:12px}
+  .vname{font-size:21px;right:calc(100% + 14px)}
+  .lines li{grid-template-columns:1fr;gap:12px}
+  .lines .zh{font-size:23px}
+  .record th{display:block;width:auto;padding:16px 0 2px;border-bottom:0}
+  .record td{display:block;padding:0 0 16px}
+  .record tr:first-child td{padding-top:0}
+  .record .val{font-size:24px}
+  .papers{grid-template-columns:1fr;gap:40px}
+  .paper img{height:auto;max-height:420px}
+  .sports{grid-template-columns:1fr;gap:32px}
+  .keys{height:170px}
+  .key{font-size:0}
+  .contact-rows div{flex-direction:column;gap:2px}
+  .contact-rows dd{justify-content:flex-start}
+}
+</style>
+<script>document.documentElement.classList.add('js')</script>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="top">
+    <a class="name" href="#top">Jamil Faraj</a>
+    <nav aria-label="Sections">
+      <a href="#letter" data-i18n="nav.letter">Letter</a>
+      <a href="#record" data-i18n="nav.record">Record</a>
+      <a href="#piano" data-i18n="nav.piano">Piano</a>
+      <a href="#sport" data-i18n="nav.sport">Sport</a>
+      <a href="#contact" data-i18n="nav.contact">Contact</a>
+    </nav>
+    <div class="langs" role="group" aria-label="Language">
+      <button data-lang="en" aria-pressed="true">EN</button>
+      <button data-lang="zh" aria-pressed="false" class="han">中文</button>
+      <button data-lang="az" aria-pressed="false">AZ</button>
+      <button data-lang="ru" aria-pressed="false">RU</button>
+    </div>
+  </div>
+
+  <main id="top">
+    <section class="hero">
+      <div>
+        <div class="label rise" style="--i:0" data-i18n="hero.eyebrow">Application portfolio · B.Sc. Computer Science &amp; Technology</div>
+        <h1 class="rise" style="--i:1">Jamil <em>Faraj</em></h1>
+        <p class="lead rise" style="--i:2" data-i18n="hero.lead">I’m from Baku. I finished School No. 164, spent seven years at the piano, and play in defence on the football pitch. I’m applying to study computer science in China.</p>
+        <div class="cta rise" style="--i:3">
+          <a class="btn solid" href="mailto:farajjamil2009@gmail.com" data-i18n="cta.mail">Write to me</a>
+          <a class="btn" href="https://wa.me/994507500078" target="_blank" rel="noopener">WhatsApp</a>
+        </div>
+      </div>
+
+      <aside class="rise" style="--i:2">
+        <figure class="portrait">
+          <span class="vname" aria-hidden="true">贾米尔·法拉杰</span>
+          <img src="img/portrait.jpg" alt="Portrait of Jamil Faraj" width="496" height="512">
+          <span class="seal" aria-hidden="true">贾</span>
+        </figure>
+        <dl class="facts">
+          <div><dt class="label" data-i18n="f.born">Born</dt><dd data-i18n="f.bornV">1 May 2009, Baku</dd></div>
+          <div><dt class="label" data-i18n="f.gpa">GPA</dt><dd>4.43 / 5.00</dd></div>
+          <div><dt class="label" data-i18n="f.score">Overall score</dt><dd>77.46 / 100</dd></div>
+          <div><dt class="label">IELTS Academic</dt><dd>6.5</dd></div>
+          <div><dt class="label" data-i18n="f.piano">Piano</dt><dd data-i18n="f.pianoV">7-year diploma</dd></div>
+        </dl>
+      </aside>
+    </section>
+
+    <!-- Letter -->
+    <section class="sec" id="letter">
+      <header class="rv">
+        <div class="label" data-i18n="letter.kicker">To the admissions committee</div>
+        <h2 data-i18n="letter.title">Why China</h2>
+      </header>
+      <div>
+        <div class="letter measure rv">
+          <p data-i18n="letter.greet">Dear members of the committee,</p>
+          <p data-i18n="letter.p1">I have looked toward China since my first years at school. Its rise impressed me, but what stayed with me was the attitude to learning behind it. Two phrases say it better than I can: <span class="han">尊师重道</span>, to honour teachers and respect the way of knowledge, and <span class="han">严谨治学</span>, to study with rigour. I want an education that takes mathematics, logic and engineering that seriously, and that expects humility and persistence from its students.</p>
+          <p data-i18n="letter.p2">China is also a place where a very old civilisation and very new technology stand side by side. The country that gave the world paper, printing and the compass now works at the front of artificial intelligence, supercomputing and quantum communication. I know a small version of that mix from the piano: seven years of classical training taught me that art, structure and mathematical precision belong together. Computer science is where I want to use it.</p>
+          <p data-i18n="letter.p3">I grew up in Baku, an old crossroads of the Silk Road, and Chinese culture and language never felt far away. I don’t want to read about new technology from a distance. I want to live on a Chinese campus, learn from its professors, work in its libraries and laboratories, and learn Chinese properly. One proverb carried me through my piano years: <span class="han">台上一分钟，台下十年功</span>, one minute on stage takes ten years of work off it. I hope to graduate as a computer scientist who helps connect Azerbaijan and China.</p>
+          <div class="sign">
+            <div>
+              <div class="sig" data-i18n="letter.sig">Jamil Faraj</div>
+              <div class="label" style="margin-top:8px" data-i18n="letter.place">Baku, Azerbaijan</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="label lines-title rv" data-i18n="prov.title">Three lines I keep close</div>
+        <ul class="lines">
+          <li class="rv">
+            <div><p class="zh" lang="zh">千里之行，始于足下</p><p class="py">Qiān lǐ zhī xíng, shǐ yú zú xià</p></div>
+            <div><p class="tr" data-i18n="prov.1">“A journey of a thousand miles begins with a single step.” Laozi</p><p class="note" data-i18n="prov.1n">How I think about a degree: one day of study at a time.</p></div>
+          </li>
+          <li class="rv">
+            <div><p class="zh" lang="zh">台上一分钟，台下十年功</p><p class="py">Tái shàng yī fēn zhōng, tái xià shí nián gōng</p></div>
+            <div><p class="tr" data-i18n="prov.2">“One minute on stage takes ten years of work off it.” Chinese proverb</p><p class="note" data-i18n="prov.2n">Seven years of piano practice in one sentence.</p></div>
+          </li>
+          <li class="rv">
+            <div><p class="zh" lang="zh">学而不思则罔，思而不学则殆</p><p class="py">Xué ér bù sī zé wǎng, sī ér bù xué zé dài</p></div>
+            <div><p class="tr" data-i18n="prov.3">“Learning without thought is labour lost; thought without learning is perilous.” Confucius</p><p class="note" data-i18n="prov.3n">Why I want strong foundations and room to ask questions.</p></div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Record -->
+    <section class="sec" id="record">
+      <header class="rv">
+        <div class="label" data-i18n="rec.kicker">School No. 164</div>
+        <h2 data-i18n="rec.title">Academic record</h2>
+      </header>
+      <table class="record rv">
+        <tr><th class="label" data-i18n="rec.school">School</th><td><div class="val" data-i18n="rec.schoolV">Secondary School No. 164, Baku</div><div class="note" data-i18n="rec.schoolN">Full secondary education with an emphasis on mathematics, physics and informatics.</div></td></tr>
+        <tr><th class="label" data-i18n="f.gpa">GPA</th><td><div class="val">4.43 / 5.00</div><div class="note" data-i18n="rec.gpaN">88.6% equivalent, earned while attending music school in parallel.</div></td></tr>
+        <tr><th class="label" data-i18n="f.score">Overall score</th><td><div class="val">77.46 / 100</div><div class="note" data-i18n="rec.scoreN">Overall examination score.</div></td></tr>
+        <tr><th class="label" data-i18n="rec.eng">English</th><td><div class="val">IELTS Academic 6.5</div><div class="note">CEFR B2</div></td></tr>
+        <tr><th class="label" data-i18n="rec.langs">Languages</th><td><div class="val" data-i18n="rec.langsV">Azerbaijani, Russian, English</div><div class="note" data-i18n="rec.langsN">Currently studying Chinese (<span class="han">中文</span>).</div></td></tr>
+        <tr><th class="label" data-i18n="rec.major">Intended major</th><td><div class="val" data-i18n="rec.majorV">Computer Science &amp; Technology</div><div class="note" data-i18n="rec.majorN"><span class="han">计算机科学与技术</span> · algorithms, artificial intelligence, software engineering.</div></td></tr>
+      </table>
+    </section>
+
+    <!-- Piano -->
+    <section class="sec" id="piano">
+      <header class="rv">
+        <div class="label" data-i18n="piano.kicker">Music school</div>
+        <h2 data-i18n="piano.title">Seven years at the piano</h2>
+      </header>
+      <div>
+        <div class="measure rv">
+          <p data-i18n="piano.p1">I completed a seven-year music school programme in classical piano, with solfeggio and music theory, alongside regular school. In that time I played five or six concerts from memory and entered two international competitions.</p>
+          <p data-i18n="piano.p2">In polyphonic music each hand carries its own voice, and both have to arrive together. Holding several independent lines in my head at once is the habit I expect to use most when I write software.</p>
+        </div>
+
+        <div class="label rv" style="margin-top:56px" data-i18n="dip.title">Competition papers, 2024</div>
+        <div class="papers">
+          <figure class="paper rv">
+            <button type="button" data-view="img/scarlett-sails.jpg" aria-label="Open the Scarlett Sails diploma">
+              <img src="img/scarlett-sails.jpg" alt="Diploma: 3rd place, Scarlett Sails international competition, awarded to Faraj Jamil Javid" loading="lazy" width="706" height="1000">
+            </button>
+            <figcaption>
+              <h3>“Scarlett Sails”</h3>
+              <div class="result" data-i18n="d1.result">3rd place, piano</div>
+              <div class="meta" data-i18n="d1.meta">3rd International Vocal and Instrumental Competition, International Festival Movement “Astana Stars”. France – Kazakhstan, 2024. Third age category. Teacher: Hajiyeva Gunel Bayram. Reg. no. 2601.</div>
+            </figcaption>
+          </figure>
+          <figure class="paper rv">
+            <button type="button" data-view="img/caspian-etude.jpg" aria-label="Open the Caspian Etude certificate">
+              <img src="img/caspian-etude.jpg" alt="Certificate of participation, Caspian Etude international competition for young pianists, Faraj Jamil Javid" loading="lazy" width="1200" height="1731">
+            </button>
+            <figcaption>
+              <h3>“Caspian Etude”</h3>
+              <div class="result" data-i18n="d2.result">Certificate of participation</div>
+              <div class="meta" data-i18n="d2.meta">First International Competition for Young Pianists, Baku City Main Department of Culture. Baku, 4 June 2024. Jury from Azerbaijan, Russia, Spain and Germany, chaired by Prof. Murad Huseynov.</div>
+            </figcaption>
+          </figure>
+        </div>
+        <div class="label rv" style="margin-top:22px" data-i18n="dip.hint">Click a document to see it full size.</div>
+
+        <div class="kb rv">
+          <h3 data-i18n="kb.title">Try the keys</h3>
+          <p class="measure" style="margin:10px 0 0;color:var(--soft)" data-i18n="kb.hint">Click the keys or play from your keyboard. Or listen to the opening of a piece:</p>
+          <div class="pieces">
+            <button class="chip" data-piece="molihua" aria-pressed="false"><span class="han">茉莉花</span> Mo Li Hua</button>
+            <button class="chip" data-piece="chopin" aria-pressed="false" data-i18n="kb.chopin">Chopin, Nocturne Op. 9 No. 2</button>
+            <button class="chip" data-piece="bach" aria-pressed="false" data-i18n="kb.bach">Bach, Prelude in C</button>
+            <button class="chip stop" id="stop" data-i18n="kb.stop">Stop</button>
+          </div>
+          <div class="keys" id="keys" aria-label="Piano keyboard"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sport -->
+    <section class="sec" id="sport">
+      <header class="rv">
+        <div class="label" data-i18n="sport.kicker">Away from the desk</div>
+        <h2 data-i18n="sport.title">Football, boxing, basketball</h2>
+      </header>
+      <div class="sports">
+        <article class="rv">
+          <h3 data-i18n="fb.h">Football</h3>
+          <div class="label tag" data-i18n="fb.tag">Defender, No. 4</div>
+          <p data-i18n="fb.p">I play in defence. A good defender reads the game a few passes ahead, covers teammates under pressure, and turns an interception into the first pass of an attack.</p>
+          <svg class="pitch" viewBox="0 0 210 150" fill="none" stroke="#1c1a16" stroke-width="1" aria-hidden="true">
+            <rect x=".5" y=".5" width="209" height="149"/>
+            <path d="M0 150M65 150v-42h80v42M88 150v-16h34v16"/>
+            <path d="M82 108a24 24 0 0 1 46 0"/>
+            <path d="M75 .5a30 30 0 0 0 60 0"/>
+            <circle cx="105" cy="126" r="1.2" fill="#1c1a16"/>
+            <g stroke="none" fill="#1c1a16" opacity=".35"><circle cx="38" cy="80" r="4"/><circle cx="172" cy="80" r="4"/><circle cx="132" cy="88" r="4"/><circle cx="105" cy="142" r="4"/></g>
+            <circle cx="80" cy="86" r="9" fill="#ad3324" stroke="none"/>
+            <text x="80" y="90" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="11" fill="#f3eee3" stroke="none">4</text>
+          </svg>
+        </article>
+        <article class="rv">
+          <h3 data-i18n="box.h">Boxing</h3>
+          <div class="label tag" data-i18n="box.tag">Self-control</div>
+          <p data-i18n="box.p">Boxing taught me self-control, rhythm, and how to keep thinking clearly when I’m tired. The same thing helps during long hours of mathematics.</p>
+        </article>
+        <article class="rv">
+          <h3 data-i18n="bb.h">Basketball</h3>
+          <div class="label tag" data-i18n="bb.tag">Team play</div>
+          <p data-i18n="bb.p">Basketball is about seeing the whole court, passing unselfishly and trusting four other people. It is good practice for working in a team.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="sec" id="contact">
+      <header class="rv">
+        <div class="label" data-i18n="nav.contact">Contact</div>
+        <h2 data-i18n="ct.title">Get in touch</h2>
+      </header>
+      <div class="rv">
+        <a class="mail" href="mailto:farajjamil2009@gmail.com">farajjamil2009@gmail.com</a>
+        <p class="measure" style="margin-top:28px" data-i18n="ct.p">Thank you for reading. Certified copies of my school diploma, IELTS certificate, piano diploma and competition certificates are available on request.</p>
+        <dl class="contact-rows">
+          <div><dt class="label" data-i18n="ct.email">Email</dt><dd><span>farajjamil2009@gmail.com</span><button class="copy" data-copy="farajjamil2009@gmail.com" data-i18n="ct.copy">Copy</button></dd></div>
+          <div><dt class="label" data-i18n="ct.phone">Phone</dt><dd><a href="tel:+994507500078">+994 50 750 00 78</a><button class="copy" data-copy="+994507500078" data-i18n="ct.copy">Copy</button></dd></div>
+          <div><dt class="label">WhatsApp</dt><dd><a href="https://wa.me/994507500078" target="_blank" rel="noopener">wa.me/994507500078</a></dd></div>
+        </dl>
+      </div>
+    </section>
+  </main>
+
+  <footer class="label">
+    <span>Jamil Faraj · <span class="han">贾米尔·法拉杰</span></span>
+    <span data-i18n="foot">Baku, 2026</span>
+  </footer>
+</div>
+
+<dialog id="viewer" aria-label="Document">
+  <button class="close" type="button" aria-label="Close">×</button>
+  <img alt="">
+</dialog>
+
+<script>
+(function(){
+  /* ── translations (English lives in the HTML) ── */
+  var T = {
+    zh: {
+      'nav.letter':'自述','nav.record':'成绩','nav.piano':'钢琴','nav.sport':'运动','nav.contact':'联系',
+      'hero.eyebrow':'本科申请材料 · 计算机科学与技术',
+      'hero.lead':'我来自巴库，毕业于第164中学，学了七年钢琴，在足球场上踢后卫。我正在申请到中国攻读计算机科学与技术专业。',
+      'cta.mail':'给我写信',
+      'f.born':'出生','f.bornV':'2009年5月1日，巴库','f.gpa':'平均绩点','f.score':'综合成绩','f.piano':'钢琴','f.pianoV':'七年制文凭',
+      'letter.kicker':'致招生委员会','letter.title':'为什么是中国','letter.greet':'尊敬的招生委员会老师：',
+      'letter.p1':'从刚上学的时候起，我就一直关注中国。它的发展令我钦佩，但真正留在我心里的，是这背后对待学问的态度。有两个词比我说得更好：尊师重道，严谨治学。我希望接受这样的教育：认真对待数学、逻辑与工程，也要求学生谦逊而有恒心。',
+      'letter.p2':'中国也是古老文明与最新科技并肩而立的地方。这个把造纸术、印刷术和指南针带给世界的国家，如今走在人工智能、超级计算和量子通信的前沿。我在钢琴上体会过一点类似的结合：七年的古典音乐训练让我明白，艺术、结构与数学般的精确本是一体。我想把这种体会用到计算机科学上。',
+      'letter.p3':'我在巴库长大，这里是古丝绸之路上的一个路口，中国的文化和语言对我来说从不遥远。我不想只在远处读到新技术。我想生活在中国的校园里，向那里的老师学习，在图书馆和实验室里用功，把中文真正学好。有一句话陪我度过了练琴的岁月：台上一分钟，台下十年功。我希望毕业后成为一名计算机科学工作者，为阿塞拜疆和中国之间的往来出一份力。',
+      'letter.sig':'贾米尔·法拉杰','letter.place':'阿塞拜疆 · 巴库',
+      'prov.title':'我常记在心里的三句话',
+      'prov.1':'老子《道德经》','prov.1n':'一个学位，也是一天一天学出来的。',
+      'prov.2':'中国谚语','prov.2n':'七年练琴，说的就是这句话。',
+      'prov.3':'孔子《论语》','prov.3n':'所以我既想打牢基础，也想保留提问的空间。',
+      'rec.kicker':'第164中学','piano.kicker':'音乐学校','rec.title':'学业成绩','rec.school':'中学','rec.schoolV':'巴库第164中学','rec.schoolN':'完整中等教育，侧重数学、物理和信息学。',
+      'rec.gpaN':'相当于88.6%，同时在音乐学校就读。','rec.scoreN':'综合考试成绩。',
+      'rec.eng':'英语','rec.langs':'语言','rec.langsV':'阿塞拜疆语、俄语、英语','rec.langsN':'正在学习中文。',
+      'rec.major':'申请专业','rec.majorV':'计算机科学与技术','rec.majorN':'算法、人工智能、软件工程。',
+      'piano.title':'七年钢琴',
+      'piano.p1':'在上普通中学的同时，我读完了七年制音乐学校的古典钢琴课程，包括视唱练耳和乐理。这期间我背谱演出过五六场音乐会，参加过两次国际比赛。',
+      'piano.p2':'在复调音乐里，两只手各有自己的声部，却必须同时到位。同时在脑中记住几条独立的线索，我想这是写程序时最用得上的习惯。',
+      'dip.title':'比赛证书 · 2024','dip.hint':'点击证书查看大图。',
+      'd1.result':'钢琴组第三名',
+      'd1.meta':'第三届国际声乐与器乐比赛，“Astana Stars”国际艺术节主办。法国—哈萨克斯坦，2024年。第三年龄组。指导教师：Hajiyeva Gunel Bayram。登记号2601。',
+      'd2.result':'参赛证书',
+      'd2.meta':'首届国际青少年钢琴比赛，巴库市文化总局主办。巴库，2024年6月4日。评委来自阿塞拜疆、俄罗斯、西班牙和德国，评委会主席为 Murad Huseynov 教授。',
+      'kb.title':'弹一弹','kb.hint':'点击琴键，或用电脑键盘弹奏。也可以听一段乐曲的开头：',
+      'kb.chopin':'肖邦 夜曲 Op.9 No.2','kb.bach':'巴赫 C大调前奏曲','kb.stop':'停止',
+      'sport.kicker':'书桌之外','sport.title':'足球、拳击、篮球',
+      'fb.h':'足球','fb.tag':'后卫 · 4号','fb.p':'我踢后卫。好的后卫能提前几脚传球读懂比赛，在压力下为队友补位，并把一次抢断变成进攻的第一脚传球。',
+      'box.h':'拳击','box.tag':'自制力','box.p':'拳击教会我自制、节奏感，以及在疲惫时保持头脑清醒。长时间做数学题时，这一点同样有用。',
+      'bb.h':'篮球','bb.tag':'团队配合','bb.p':'篮球讲究看清全场、无私传球、信任另外四名队友。这是团队合作很好的练习。',
+      'ct.title':'联系我','ct.p':'感谢您的阅读。如有需要，我可以提供中学毕业证书、雅思成绩单、钢琴文凭及比赛证书的认证副本。',
+      'ct.email':'邮箱','ct.phone':'电话','ct.copy':'复制','ct.copied':'已复制','foot':'巴库 · 2026',
+      'now':'正在播放：'
+    },
+    az: {
+      'nav.letter':'Məktub','nav.record':'Təhsil','nav.piano':'Fortepiano','nav.sport':'İdman','nav.contact':'Əlaqə',
+      'hero.eyebrow':'Qəbul üçün portfolio · Kompüter elmləri və texnologiyası, bakalavr',
+      'hero.lead':'Bakıdanam. 164 saylı məktəbi bitirmişəm, yeddi il fortepiano təhsili almışam, futbolda müdafiədə oynayıram. Çində kompüter elmləri üzrə oxumaq üçün müraciət edirəm.',
+      'cta.mail':'Mənə yazın',
+      'f.born':'Doğum tarixi','f.bornV':'1 may 2009, Bakı','f.gpa':'Orta bal (GPA)','f.score':'Ümumi bal','f.piano':'Fortepiano','f.pianoV':'7 illik diplom',
+      'letter.kicker':'Qəbul komissiyasına','letter.title':'Niyə Çin','letter.greet':'Hörmətli komissiya üzvləri,',
+      'letter.p1':'Məktəbin ilk illərindən Çinə maraqla baxmışam. Ölkənin yüksəlişi məni heyran edib, amma yadımda ən çox qalan bunun arxasında duran elmə münasibət olub. Bunu iki ifadə məndən yaxşı deyir: <span class="han">尊师重道</span>, yəni müəllimə hörmət və biliyin yoluna ehtiram, və <span class="han">严谨治学</span>, yəni ciddi, nizamlı təhsil. Riyaziyyata, məntiqə və mühəndisliyə bu qədər ciddi yanaşan, tələbədən təvazökarlıq və səbir gözləyən təhsil almaq istəyirəm.',
+      'letter.p2':'Çin həm də çox qədim sivilizasiya ilə ən yeni texnologiyanın yanaşı durduğu yerdir. Dünyaya kağızı, çapı və kompası vermiş ölkə bu gün süni intellekt, superkompüterlər və kvant rabitəsi sahəsində ön sıradadır. Bu qovuşmanın kiçik bir formasını fortepianodan tanıyıram: yeddi illik klassik təhsil mənə göstərdi ki, sənət, quruluş və riyazi dəqiqlik bir-birindən ayrı deyil. Bunu kompüter elmlərində tətbiq etmək istəyirəm.',
+      'letter.p3':'İpək Yolunun qədim kəsişmələrindən biri olan Bakıda böyümüşəm, ona görə Çin mədəniyyəti və dili mənə heç vaxt uzaq görünməyib. Yeni texnologiyalar haqqında uzaqdan oxumaq istəmirəm. Çin universitetinin kampusunda yaşamaq, oradakı professorlardan öyrənmək, kitabxana və laboratoriyalarında çalışmaq, Çin dilini əsaslı öyrənmək istəyirəm. Fortepiano illərimdə bir Çin məsəli mənə yol yoldaşı olub: <span class="han">台上一分钟，台下十年功</span>, səhnədə bir dəqiqənin arxasında on il zəhmət durur. Ümid edirəm ki, universiteti Azərbaycanla Çini bir-birinə bağlamağa kömək edən kompüter mütəxəssisi kimi bitirəcəyəm.',
+      'letter.sig':'Cəmil Fərəc','letter.place':'Bakı, Azərbaycan',
+      'prov.title':'Yadımda saxladığım üç kəlam',
+      'prov.1':'«Min millik yol bir addımla başlayır.» Laozi','prov.1n':'Təhsilə də belə baxıram: hər gün bir addım.',
+      'prov.2':'«Səhnədə bir dəqiqə, səhnə arxasında on il zəhmət.» Çin məsəli','prov.2n':'Yeddi illik fortepiano məşqi bir cümlədə.',
+      'prov.3':'«Düşünmədən öyrənmək boş zəhmətdir; öyrənmədən düşünmək təhlükəlidir.» Konfutsi','prov.3n':'Ona görə həm möhkəm təməl, həm də sual vermək imkanı istəyirəm.',
+      'rec.kicker':'164 saylı məktəb','piano.kicker':'Musiqi məktəbi','rec.title':'Təhsil göstəriciləri','rec.school':'Məktəb','rec.schoolV':'164 saylı tam orta məktəb, Bakı','rec.schoolN':'Tam orta təhsil; əsas diqqət riyaziyyat, fizika və informatikaya.',
+      'rec.gpaN':'88,6%-ə bərabərdir; paralel olaraq musiqi məktəbində oxumuşam.','rec.scoreN':'Ümumi imtahan balı.',
+      'rec.eng':'İngilis dili','rec.langs':'Dillər','rec.langsV':'Azərbaycan, rus, ingilis','rec.langsN':'Hazırda Çin dilini öyrənirəm (<span class="han">中文</span>).',
+      'rec.major':'Seçdiyim ixtisas','rec.majorV':'Kompüter elmləri və texnologiyası','rec.majorN':'<span class="han">计算机科学与技术</span> · alqoritmlər, süni intellekt, proqram mühəndisliyi.',
+      'piano.title':'Fortepiano arxasında yeddi il',
+      'piano.p1':'Ümumtəhsil məktəbi ilə yanaşı, klassik fortepiano üzrə yeddiillik musiqi məktəbini solfecio və musiqi nəzəriyyəsi ilə birlikdə bitirmişəm. Bu müddətdə beş-altı konsertdə əzbərdən çıxış etmiş, iki beynəlxalq müsabiqədə iştirak etmişəm.',
+      'piano.p2':'Polifonik musiqidə hər əlin öz səsi var və ikisi də eyni anda yerinə çatmalıdır. Bir neçə müstəqil xətti eyni vaxtda yadda saxlamaq, məncə, proqram yazanda ən çox işimə yarayacaq vərdişdir.',
+      'dip.title':'Müsabiqə sənədləri, 2024','dip.hint':'Böyütmək üçün sənədin üzərinə klikləyin.',
+      'd1.result':'3-cü yer, fortepiano',
+      'd1.meta':'III Beynəlxalq vokal və instrumental müsabiqə, “Astana Stars” Beynəlxalq Festival Hərəkatı. Fransa – Qazaxıstan, 2024. Üçüncü yaş kateqoriyası. Müəllim: Hacıyeva Günel Bayram. Qeydiyyat № 2601.',
+      'd2.result':'İştirak sertifikatı',
+      'd2.meta':'Gənc pianoçuların I Beynəlxalq müsabiqəsi, Bakı Şəhər Mədəniyyət Baş İdarəsi. Bakı, 4 iyun 2024. Münsiflər Azərbaycan, Rusiya, İspaniya və Almaniyadan; sədr prof. Murad Hüseynov.',
+      'kb.title':'Klavişləri yoxlayın','kb.hint':'Klavişlərə klikləyin və ya klaviaturadan çalın. Yaxud bir əsərin başlanğıcını dinləyin:',
+      'kb.chopin':'Şopen, Noktürn op. 9 № 2','kb.bach':'Bax, Do major prelüd','kb.stop':'Dayandır',
+      'sport.kicker':'Dərsdən kənar','sport.title':'Futbol, boks, basketbol',
+      'fb.h':'Futbol','fb.tag':'Müdafiəçi, № 4','fb.p':'Müdafiədə oynayıram. Yaxşı müdafiəçi oyunu bir neçə ötürmə qabaqcadan oxuyur, təzyiq altında komanda yoldaşlarını sığortalayır və topu aldığı anı hücumun ilk ötürməsinə çevirir.',
+      'box.h':'Boks','box.tag':'Özünənəzarət','box.p':'Boks mənə özümü idarə etməyi, ritmi və yorğun olanda da aydın düşünməyi öyrədib. Bu, saatlarla riyaziyyatla məşğul olanda da kömək edir.',
+      'bb.h':'Basketbol','bb.tag':'Komanda oyunu','bb.p':'Basketbol bütün meydançanı görməyi, topu vaxtında ötürməyi və daha dörd nəfərə güvənməyi tələb edir. Komandada işləmək üçün yaxşı məşqdir.',
+      'ct.title':'Əlaqə','ct.p':'Oxuduğunuz üçün təşəkkür edirəm. Məktəb attestatının, IELTS sertifikatının, fortepiano diplomunun və müsabiqə sənədlərinin təsdiqlənmiş surətlərini sorğu əsasında təqdim edə bilərəm.',
+      'ct.email':'E-poçt','ct.phone':'Telefon','ct.copy':'Kopyala','ct.copied':'Kopyalandı','foot':'Bakı, 2026',
+      'now':'Səslənir: '
+    },
+    ru: {
+      'nav.letter':'Письмо','nav.record':'Учёба','nav.piano':'Фортепиано','nav.sport':'Спорт','nav.contact':'Контакты',
+      'hero.eyebrow':'Портфолио абитуриента · бакалавриат, компьютерные науки и технологии',
+      'hero.lead':'Я из Баку. Окончил школу № 164, семь лет учился игре на фортепиано, в футболе играю в защите. Подаю документы на компьютерные науки в Китае.',
+      'cta.mail':'Написать мне',
+      'f.born':'Дата рождения','f.bornV':'1 мая 2009, Баку','f.gpa':'Средний балл','f.score':'Общий балл','f.piano':'Фортепиано','f.pianoV':'7-летний диплом',
+      'letter.kicker':'Приёмной комиссии','letter.title':'Почему Китай','letter.greet':'Уважаемые члены комиссии,',
+      'letter.p1':'Я смотрю в сторону Китая с первых школьных лет. Его подъём меня впечатлил, но сильнее всего запомнилось отношение к учёбе, которое за этим стоит. Две фразы говорят об этом лучше меня: <span class="han">尊师重道</span>, уважать учителя и путь знания, и <span class="han">严谨治学</span>, учиться строго и основательно. Я хочу получить образование, в котором к математике, логике и инженерии относятся настолько серьёзно, а от студента ждут скромности и упорства.',
+      'letter.p2':'Китай ещё и место, где очень древняя цивилизация и самые новые технологии существуют рядом. Страна, подарившая миру бумагу, книгопечатание и компас, сегодня работает на переднем крае искусственного интеллекта, суперкомпьютеров и квантовой связи. Малую версию такого сочетания я знаю по фортепиано: семь лет классической школы научили меня, что искусство, структура и математическая точность неотделимы друг от друга. Применить это я хочу в компьютерных науках.',
+      'letter.p3':'Я вырос в Баку, на старом перекрёстке Шёлкового пути, и китайская культура и язык никогда не казались мне далёкими. Я не хочу читать о новых технологиях издалека. Хочу жить в китайском кампусе, учиться у его преподавателей, работать в библиотеках и лабораториях и как следует выучить китайский. Через годы занятий фортепиано меня провела одна пословица: <span class="han">台上一分钟，台下十年功</span>, за минутой на сцене стоят десять лет труда. Надеюсь окончить университет специалистом по компьютерным наукам, который помогает связывать Азербайджан и Китай.',
+      'letter.sig':'Джамиль Фарадж','letter.place':'Баку, Азербайджан',
+      'prov.title':'Три фразы, которые я держу в голове',
+      'prov.1':'«Путь в тысячу ли начинается с одного шага.» Лао-цзы','prov.1n':'Так я думаю и об учёбе: по одному дню.',
+      'prov.2':'«Минута на сцене стоит десяти лет труда за сценой.» Китайская пословица','prov.2n':'Семь лет занятий фортепиано в одной фразе.',
+      'prov.3':'«Учиться и не размышлять — напрасный труд; размышлять и не учиться — опасно.» Конфуций','prov.3n':'Поэтому мне нужны и прочная база, и возможность задавать вопросы.',
+      'rec.kicker':'Школа № 164','piano.kicker':'Музыкальная школа','rec.title':'Учёба','rec.school':'Школа','rec.schoolV':'Средняя школа № 164, Баку','rec.schoolN':'Полное среднее образование с упором на математику, физику и информатику.',
+      'rec.gpaN':'Эквивалент 88,6 %; параллельно учился в музыкальной школе.','rec.scoreN':'Общий экзаменационный балл.',
+      'rec.eng':'Английский','rec.langs':'Языки','rec.langsV':'Азербайджанский, русский, английский','rec.langsN':'Сейчас учу китайский (<span class="han">中文</span>).',
+      'rec.major':'Направление','rec.majorV':'Компьютерные науки и технологии','rec.majorN':'<span class="han">计算机科学与技术</span> · алгоритмы, искусственный интеллект, программная инженерия.',
+      'piano.title':'Семь лет за фортепиано',
+      'piano.p1':'Параллельно с обычной школой я окончил семилетнюю музыкальную школу по классу фортепиано, с сольфеджио и теорией музыки. За это время сыграл наизусть пять-шесть концертов и участвовал в двух международных конкурсах.',
+      'piano.p2':'В полифонической музыке у каждой руки свой голос, и обе должны прийти вовремя. Держать в голове несколько независимых линий одновременно: думаю, эта привычка пригодится мне в программировании больше всего.',
+      'dip.title':'Конкурсные документы, 2024','dip.hint':'Нажмите на документ, чтобы открыть его в полном размере.',
+      'd1.result':'3-е место, фортепиано',
+      'd1.meta':'III Международный вокально-инструментальный конкурс, Международное фестивальное движение «Astana Stars». Франция – Казахстан, 2024. Третья возрастная категория. Педагог: Гаджиева Гюнель Байрам. Рег. № 2601.',
+      'd2.result':'Сертификат участника',
+      'd2.meta':'Первый международный конкурс юных пианистов, Главное управление культуры города Баку. Баку, 4 июня 2024. Жюри из Азербайджана, России, Испании и Германии, председатель проф. Мурад Гусейнов.',
+      'kb.title':'Попробуйте клавиши','kb.hint':'Нажимайте на клавиши или играйте с клавиатуры. Или послушайте начало одной из пьес:',
+      'kb.chopin':'Шопен, Ноктюрн op. 9 № 2','kb.bach':'Бах, Прелюдия до мажор','kb.stop':'Стоп',
+      'sport.kicker':'Помимо учёбы','sport.title':'Футбол, бокс, баскетбол',
+      'fb.h':'Футбол','fb.tag':'Защитник, № 4','fb.p':'Я играю в защите. Хороший защитник читает игру на несколько передач вперёд, страхует партнёров под давлением и превращает перехват в первую передачу атаки.',
+      'box.h':'Бокс','box.tag':'Самоконтроль','box.p':'Бокс научил меня самоконтролю, ритму и умению ясно думать, когда устал. Это же помогает в долгие часы занятий математикой.',
+      'bb.h':'Баскетбол','bb.tag':'Командная игра','bb.p':'В баскетболе нужно видеть всю площадку, вовремя отдавать мяч и доверять ещё четверым. Хорошая тренировка для работы в команде.',
+      'ct.title':'Связаться','ct.p':'Спасибо, что дочитали. Заверенные копии школьного аттестата, сертификата IELTS, диплома по фортепиано и конкурсных документов предоставлю по запросу.',
+      'ct.email':'Почта','ct.phone':'Телефон','ct.copy':'Копировать','ct.copied':'Скопировано','foot':'Баку, 2026',
+      'now':'Звучит: '
+    }
+  };
+  T.en = {'ct.copied':'Copied','now':'Playing: '};
+  var nodes = [].slice.call(document.querySelectorAll('[data-i18n]'));
+  nodes.forEach(function(n){ var k=n.getAttribute('data-i18n'); if(!(k in T.en)) T.en[k]=n.innerHTML; });
+  var lang = 'en';
+  function t(k){ return (T[lang] && T[lang][k]) || T.en[k] || ''; }
+  function setLang(l){
+    if(!T[l]) return;
+    lang = l;
+    document.documentElement.lang = l;
+    nodes.forEach(function(n){ n.innerHTML = t(n.getAttribute('data-i18n')); });
+    document.querySelectorAll('[data-lang]').forEach(function(b){ b.setAttribute('aria-pressed', String(b.dataset.lang===l)); });
+    try{ localStorage.setItem('jf-lang', l); }catch(e){}
+  }
+  document.querySelectorAll('[data-lang]').forEach(function(b){ b.addEventListener('click', function(){ setLang(b.dataset.lang); }); });
+  var saved = null; try{ saved = localStorage.getItem('jf-lang'); }catch(e){}
+  if(!saved){ var nl=(navigator.language||'').slice(0,2).toLowerCase(); if(nl==='zh'||nl==='az'||nl==='ru') saved=nl; }
+  if(saved && saved!=='en') setLang(saved);
+
+  /* ── scroll reveal ── */
+  var rv = document.querySelectorAll('.rv');
+  if('IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(es){
+      es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+    },{rootMargin:'0px 0px -8% 0px'});
+    rv.forEach(function(n){ io.observe(n); });
+  } else rv.forEach(function(n){ n.classList.add('in'); });
+
+  /* ── copy ── */
+  document.querySelectorAll('[data-copy]').forEach(function(b){
+    b.addEventListener('click', function(){
+      var done = function(){ b.textContent = t('ct.copied'); setTimeout(function(){ b.textContent = t('ct.copy'); }, 1600); };
+      if(navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(b.dataset.copy).then(done, function(){});
+    });
+  });
+
+  /* ── document viewer ── */
+  var dlg = document.getElementById('viewer'), dimg = dlg.querySelector('img');
+  document.querySelectorAll('[data-view]').forEach(function(b){
+    b.addEventListener('click', function(){
+      var im = b.querySelector('img');
+      dimg.src = im.src; dimg.alt = im.alt;
+      if(dlg.showModal) dlg.showModal(); else window.open(im.src);
+    });
+  });
+  dlg.addEventListener('click', function(e){ if(e.target!==dimg) dlg.close(); });
+
+  /* ── piano ── */
+  var WH = ['C4','D4','E4','F4','G4','A4','B4','C5','D5','E5','F5'];
+  var BL = [['C#4',0],['D#4',1],['F#4',3],['G#4',4],['A#4',5],['C#5',7],['D#5',8]];
+  var WK = ['a','s','d','f','g','h','j','k','l',';',"'"], BK = ['w','e','t','y','u','o','p'];
+  var SEMI = {C:0,'C#':1,D:2,'D#':3,E:4,F:5,'F#':6,G:7,'G#':8,A:9,'A#':10,B:11};
+  var box = document.getElementById('keys'), el = {}, byKey = {};
+  WH.forEach(function(n,i){
+    var k = document.createElement('div'); k.className='key'; k.dataset.n=n; k.textContent=WK[i].toUpperCase();
+    box.appendChild(k); el[n]=k; byKey[WK[i]]=n;
+  });
+  BL.forEach(function(b,i){
+    var k = document.createElement('div'); k.className='key black'; k.dataset.n=b[0]; k.textContent=BK[i].toUpperCase();
+    k.style.left = ((b[1]+1)/WH.length*100)+'%';
+    box.appendChild(k); el[b[0]]=k; byKey[BK[i]]=b[0];
+  });
+  var ctx = null;
+  function freq(n){ var m=n.match(/^([A-G]#?)(\d)$/); return 440*Math.pow(2,(SEMI[m[1]]-9+(m[2]-4)*12)/12); }
+  function play(n, len){
+    len = len || 1.5;
+    try{
+      if(!ctx) ctx = new (window.AudioContext||window.webkitAudioContext)();
+      if(ctx.state==='suspended') ctx.resume();
+      var now = ctx.currentTime, f = freq(n);
+      var g = ctx.createGain(), lp = ctx.createBiquadFilter();
+      lp.type='lowpass'; lp.frequency.setValueAtTime(3200,now); lp.frequency.exponentialRampToValueAtTime(900,now+len);
+      g.gain.setValueAtTime(0.0001,now); g.gain.exponentialRampToValueAtTime(0.32,now+0.008); g.gain.exponentialRampToValueAtTime(0.0001,now+len);
+      [[1,'triangle',1],[2,'sine',.28],[3,'sine',.1]].forEach(function(p){
+        var o=ctx.createOscillator(), og=ctx.createGain(); o.type=p[1]; o.frequency.value=f*p[0]; og.gain.value=p[2];
+        o.connect(og); og.connect(lp); o.start(now); o.stop(now+len+.05);
+      });
+      lp.connect(g); g.connect(ctx.destination);
+    }catch(e){}
+    var k = el[n]; if(k){ k.classList.add('down'); setTimeout(function(){ k.classList.remove('down'); }, 170); }
+  }
+  box.addEventListener('pointerdown', function(e){
+    var k = e.target.closest('.key'); if(!k) return; e.preventDefault(); play(k.dataset.n);
+  });
+  document.addEventListener('keydown', function(e){
+    if(e.repeat||e.metaKey||e.ctrlKey||e.altKey||dlg.open) return;
+    var n = byKey[e.key.toLowerCase()]; if(n) play(n);
+  });
+
+  var U = 300;
+  var PIECES = {
+    molihua: {name:'茉莉花 Mo Li Hua', seq:[['E4',0],['E4',350],['G4',700],['A4',1050],['C5',1400],['C5',1750],['A4',2100],['G4',2500],['G4',2980],['A4',3320],['G4',3680],
+              ['E4',4200],['E4',4550],['G4',4900],['A4',5250],['C5',5600],['C5',5950],['A4',6300],['G4',6680],['G4',7150],['A4',7500],['G4',7850],['E4',8300]]},
+    chopin: {key:'kb.chopin', seq:[['G4',0],['E5',U],['D5',5*U],['E5',6*U],['D5',7*U],['C5',10*U],['G4',12*U],['E5',13*U]]},
+    bach: {key:'kb.bach', seq:[['C4',0],['E4',220],['G4',440],['C5',660],['E5',880],['G4',1100],['C5',1320],['E5',1540],
+           ['C4',1760],['E4',1980],['G4',2200],['C5',2420],['E5',2640],['G4',2860],['C5',3080],['E5',3300],
+           ['C4',3520],['D4',3740],['A4',3960],['D5',4180],['F5',4400],['A4',4620],['D5',4840],['F5',5060],
+           ['C4',5280],['D4',5500],['A4',5720],['D5',5940],['F5',6160],['A4',6380],['D5',6600],['F5',6820]]}
+  };
+  var timers = [], chips = document.querySelectorAll('[data-piece]');
+  function stop(){ timers.forEach(clearTimeout); timers=[]; chips.forEach(function(c){ c.setAttribute('aria-pressed','false'); }); }
+  chips.forEach(function(c){
+    c.addEventListener('click', function(){
+      stop(); c.setAttribute('aria-pressed','true');
+      var p = PIECES[c.dataset.piece], last = 0;
+      p.seq.forEach(function(s){ last=Math.max(last,s[1]); timers.push(setTimeout(function(){ play(s[0],1.6); }, s[1])); });
+      timers.push(setTimeout(stop, last+1400));
+    });
+  });
+  document.getElementById('stop').addEventListener('click', stop);
+})();
+</script>
+</body>
+</html>
